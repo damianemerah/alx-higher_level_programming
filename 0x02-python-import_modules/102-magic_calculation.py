@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
-    from add_0 import add, sub
+    from magic_calcuation_102 import add, sub
 
     def magic_calculation(a, b):
         if a < b:
