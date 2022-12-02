@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
-    import sys
     from add_0 import add, sub, div, mul
+    import sys
 
-    arg_len = len(sys.argv) - 1
-    if arg_len != 3:
+    if len(sys.argv) - 1 != 3:
         print('Usage: ./100-my_calculator.py <a> <operator> <b>')
         sys.exit(1)
     ops = {'+': add, '-': sub, '*': mul, '/': div}
