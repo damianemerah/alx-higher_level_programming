@@ -12,7 +12,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == '__main__':
     """
-    Access the database and 
+    Access the database and
     get data
     """
 
