@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 """
-deletes all State objects with a name containing
-the letter a from the database hbtn_0e_6_usa
+prints all City objects from the database hbtn_0e_14_usa
 """
 
 from sys import argv
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -15,12 +15,13 @@ if __name__ == '__main__':
             argv[1], argv[2], argv[3])
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
+    session = Session()
 
-    session = Sesstion()
-    instance = session.query(State).filter(State.name.contains('a'))
+    query = session.query(City, State).join(State)
+    print('query', query)
 
-    for ins in instance:
-        session.delete(ins)
+    for c, s in query.all():
+        print('{}: ({:d}) {}'.format(s.name, c.id, c.name))
 
     session.commit()
     session.close()
