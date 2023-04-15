@@ -4,4 +4,4 @@
 url=$1
 
 # Send a request to the URL using curl
-echo $(curl -s -o /dev/null -w "%{size_download}" "$url")
+curl -s $url | wc -c
