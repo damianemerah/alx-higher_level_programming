@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//Read file content
+// Read file content
 
 const fs = require('fs');
 
